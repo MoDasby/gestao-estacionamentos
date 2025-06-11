@@ -22,7 +22,7 @@ com.modasby.gestaoestacionamentos
 |   |-- spot            # Entidades relacionadas as vagas
 |-- event               # Camada de eventos de webhook
 |   |-- handler         # Handlers do webhook
-|   |-- model           # POJOS com dados dos eventos
+|   |-- model           # Classes com dados dos eventos
 |-- repository          # Camada de repositórios
 |-- service             # Camada de service(orquestração)
 |-- web                 # Camada de transporte
