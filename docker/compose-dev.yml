@@ -1,0 +1,13 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: gestao-estacionamentos-db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=estacionamento
+    ports:
+      - "5432:5432"
+  simulator:
+    image: cfontes0estapar/garage-sim:1.0.0
+    network_mode: host
