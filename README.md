@@ -32,26 +32,20 @@ com.modasby.gestaoestacionamentos
 ```
 
 # Executando com Docker
-1. Configure o banco de dados no application.properties
-```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/estacionamento
-spring.datasource.username=postgres
-spring.datasource.password=123456
-spring.jpa.hibernate.ddl-auto=update
+
+1. Faça build do projeto
+```bash
+docker build -t gestao-estacionamentos:latest .
 ```
 
-2. Faça build do projeto
+2. Inicie o banco de dados e o simulador
 ```bash
-docker build -t gestao-estacionamentos:latest
+docker compose -f docker/compose-dev.yml up -d
 ```
 
 3. Inicie o container
 ```bash
 docker run --network="host" gestao-estacionamentos:latest
-```
-4. Inicie o Simulador
-```bash
-docker run -d --network="host" cfontes0estapar/garage-sim:1.0.0
 ```
 
 4. Acesse o endpoint `http://localhost:3003/garage` para iniciar o sistema
